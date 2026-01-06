@@ -1,0 +1,100 @@
+.hero-header {
+    padding: 6rem 1rem;
+    text-align: center;
+    background: radial-gradient(circle at top center, var(--bg-surface) 0%, var(--bg-core) 100%);
+    border-bottom: 1px solid var(--border-subtle);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background glow effect */
+.hero-header::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 50%;
+    background: var(--brand-primary);
+    filter: blur(120px);
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+.hero-features {
+    display: grid;
+    /* Enforce 2 columns minimum on larger screens to avoid the "3 top, 1 bottom" orphan look - update */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 4rem;
+    text-align: left;
+}
+
+@media (min-width: 1100px) {
+    .hero-features {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-features {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+.feature-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--brand-primary);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Add a subtle shine effect on hover */
+.feature-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent 40%, rgba(255, 255, 255, 0.05) 50%, transparent 60%);
+    transform: translateX(-100%);
+    transition: transform 0.6s;
+}
+
+.feature-card:hover::after {
+    transform: translateX(100%);
+}
+
+.feature-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    width: fit-content;
+}
+
+.feature-title {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--text-highlight);
+}
+
+.feature-desc {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}

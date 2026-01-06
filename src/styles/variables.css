@@ -1,0 +1,56 @@
+:root {
+  /* Zemyth Brand Colors - High Contrast Mode */
+  --bg-core: #09090B;
+  /* Rich Black */
+  /* Dark Charcoal Main BG */
+  --bg-surface: #1C1C21;
+  /* Darkened Surface/Navy */
+  /* Navy Blue Card BG */
+  --bg-card: #1C1C21;
+  --brand-primary: #DDFE00;
+  /* More vibrant/saturated Lime */
+  /* Neon Lime */
+  --brand-secondary: #3B82F6;
+  /* Blue */
+  --brand-accent: #DDFE00;
+  /* Same as primary for consistency */
+
+  /* Text Colors */
+  --text-main: #FFFFFF;
+  --text-muted: #B3BEC1;
+  --text-highlight: #EEFE5F;
+  --text-inverse: #000000;
+
+  /* UI Elements */
+  --border-subtle: rgba(255, 255, 255, 0.1);
+  --border-highlight: rgba(238, 254, 95, 0.5);
+
+  /* Typography */
+  --font-heading: 'Rajdhani', sans-serif;
+  /* Tech/Terminal look */
+  --font-body: 'Inter', sans-serif;
+
+  /* Spacing & Layout */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  /* Standard Zemyth radius */
+  --radius-lg: 12px;
+
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 8rem;
+
+  --gradient-text: linear-gradient(135deg, #EEFE5F 0%, #FFFFFF 100%);
+  --gradient-glow: radial-gradient(circle, rgba(238, 254, 95, 0.15) 0%, transparent 70%);
+
+  /* Animation */
+  --ease-spring: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (prefers-color-scheme: light) {
+  /* Enforce dark mode for this premium look regardless of system preference 
+     unless explicitly requested otherwise, but sticking to dark as per plan 
+  */
+}

@@ -1,0 +1,80 @@
+.project-flow-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+}
+
+@media (min-width: 900px) {
+  .project-flow-container {
+    flex-direction: row;
+    align-items: stretch;
+  }
+}
+
+.flow-step {
+  flex: 1;
+  background: var(--bg-card);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  position: relative;
+  transition: transform 0.2s, border-color 0.2s;
+  z-index: 1;
+}
+
+.flow-step:hover {
+  transform: translateY(-4px);
+  border-color: var(--brand-primary);
+}
+
+/* Connectors */
+.flow-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  /* Mobile: Vertical arrow pointing down */
+  left: 50%;
+  bottom: -2rem;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 2rem;
+  background: linear-gradient(to bottom, var(--border-subtle), var(--brand-primary));
+}
+
+@media (min-width: 900px) {
+  .flow-step:not(:last-child)::after {
+    /* Desktop: Horizontal arrow pointing right */
+    left: auto;
+    bottom: auto;
+    right: -2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2rem;
+    height: 2px;
+    background: linear-gradient(to right, var(--border-subtle), var(--brand-primary));
+  }
+}
+
+/* Arrow head */
+.flow-step:not(:last-child)::before {
+  content: "▼";
+  position: absolute;
+  left: 50%;
+  bottom: -2.8rem;
+  transform: translateX(-50%);
+  color: var(--brand-primary);
+  font-size: 1.2rem;
+  opacity: 0.8;
+  z-index: 2;
+}
+
+@media (min-width: 900px) {
+  .flow-step:not(:last-child)::before {
+    content: "▶";
+    left: auto;
+    bottom: auto;
+    right: -2.8rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
